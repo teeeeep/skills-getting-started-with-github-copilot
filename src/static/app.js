@@ -87,9 +87,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const darkModeToggle = document.getElementById("dark-mode-toggle");
 
-  darkModeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
+  if (darkModeToggle) {
+    console.log("Dark mode toggle button found");
+    darkModeToggle.addEventListener("click", () => {
+      console.log("Dark mode toggle button clicked");
+      document.body.classList.toggle("dark-mode");
+      console.log("Dark mode class toggled");
+    });
+  } else {
+    console.error("Dark mode toggle button not found");
+  }
 
   // Initialize app
   fetchActivities();
